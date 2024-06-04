@@ -23,8 +23,7 @@ syn match 	simpleArrayStringEscape	/\\x\%(_*[0-9a-fA-F]\)\{2}/		contained
 syn match	simpleArrayStringEscape	/\\x{\%(_*[0-9a-fA-F]\{2}\)*_*}/	contained
 syn match	simpleArrayStringEscape	/\\;\@=/				contained nextgroup=simpleArrayComment
 
-syn match	simpleArrayListErr	/}/
-syn region	simpleArrayList		start=/{/ end=/}/	fold contains=TOP,simpleArrayListErr
+syn region	simpleArrayList		start=/{/ end=/}/	fold		transparent
 
 syn match	simpleArrayComment	/;[^\r\n]*\r\=$/
 
@@ -35,7 +34,6 @@ hi def link simpleArrayStringEscapeErr		Error
 hi def link simpleArrayStringEscape		Special
 hi def link simpleArrayComment			Comment
 hi def link simpleArrayList			NONE
-hi def link simpleArrayListErr			Error
 " }}}1
 
 let b:current_syntax = 'simple-array'

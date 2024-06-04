@@ -1,0 +1,8 @@
+button {
+    text { foo }
+    pos { bottom }
+}
+button {
+    text { bar }
+    pos { top }
+}

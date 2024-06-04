@@ -42,19 +42,19 @@ like JSON, but array is linked list
 ```json
 ["list", [
     ["button", [
-        ["name", ["foo"]],
+        ["name", [["foo"]]],
         ["pos", [["10"], ["20"]]]
     ]],
     ["button", [
-        ["name", ["bar"]],
+        ["name", [["bar"]]],
         ["pos", [["10"], ["25"]]]
     ]],
     ["list", [
-        ["name", "list"],
+        ["name", [["list"]]],
         ["pos", [["20"], ["20"]]],
         ["members", [
             ["button", [
-                ["name", ["bar"]],
+                ["name", [["bar"]]],
                 ["pos", [["0"], ["0"]]]
             ]]
         ]]

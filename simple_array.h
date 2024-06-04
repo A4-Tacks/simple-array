@@ -576,6 +576,13 @@ void simp_arr_fmt(
                     && node->sub->sub == NULL)
             {
                 f("{}");
+            } else if (node->sub->key != NULL
+                    && node->sub->next == NULL
+                    && node->sub->sub == NULL)
+            {
+                f("{ ");
+                simp_arr_fmt_string(node->sub->key, f);
+                f(" }");
             } else {
                 f("{\n");
                 simp_arr_fmt(node->sub, indent, indent_level+1, f);

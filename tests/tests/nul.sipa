@@ -1,0 +1,2 @@
+"ab\x00cd" ; "cd" in c str is unreachable
+cd

@@ -13,7 +13,7 @@ void eprint_handle(char *s) {
 
 int main(int argc, char *argv[]) {
     size_t size = 32, i = 0;
-    char *s = malloc(sizeof(char) * size);
+    char *s = (char*)malloc(sizeof(char) * size);
     int exit_code = 0;
 
     if (argc == 1) {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
             if (ch < 0)
                 break;
             if (i+2 >= size)
-                s = realloc(s, sizeof(char) * (size <<= 1));
+                s = (char*)realloc(s, sizeof(char) * (size <<= 1));
             s[i++] = ch;
         }
         s[i] = '\0';
@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
     size_t alloc_size;
 
     while ((alloc_size = simp_arr_parse(&meta)))
-        meta.last_alloc = malloc(alloc_size);
+        meta.last_alloc = (struct simp_arr*)malloc(alloc_size);
 
     if (simp_arr_fmt_result(&meta, eprint_handle)) {
         simp_arr_fmt_short(&meta.head, print_handle);

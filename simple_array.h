@@ -36,7 +36,7 @@ enum simp_arr_parse_stat {
     SIMPARR_STAT_STRING_ERR_NEVER_CLOSED_ARR,
     SIMPARR_STAT_STRING_ERR_UNEXPECTED_ARR_CLOSE,
 };
-char *stat(enum simp_arr_parse_stat stat) {
+char *simp_arr_stat_debug(enum simp_arr_parse_stat stat) {
     switch (stat) {
     case SIMPARR_STAT_INIT: return "INIT";
     case SIMPARR_STAT_NORMAL: return "NORMAL";

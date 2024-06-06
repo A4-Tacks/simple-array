@@ -74,11 +74,11 @@ like JSON, but array is linked list
 
 **ws** = `[ \t]*` \*([ comment ] newline)
 
-**begin** = "{"
+**begin** = `{`
 
-**end** = "}"
+**end** = `}`
 
-**string** = `[^"'{}; \t\r\n]+` / `'[^'\r\n]*'` / `"` str-ch* `"`
+**string** = `[^"'{}; \t\r\n]+` / `'[^'\r\n]*'` / `"` \*str-ch `"`
 
 **str-ch** = `[^"\r\n\\]`\
 **str-ch**/= `\\` (`[nrtae"\\]` / `x(?_*[\da-fA-F]){2}` / `x\{(?:(?:_*[\da-fA-F]{2}))+\}` / [ comment ] `\r?\n[ \t]*`)

@@ -1,0 +1,9 @@
+color {
+    "\e[91mHello, World!\e[0m"
+    "\e"
+    "\x1b"
+    "\x0b"
+    "\r\n"
+    "\x1f"
+    "\x7f"
+}

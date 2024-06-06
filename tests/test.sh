@@ -27,8 +27,8 @@ echo compilation completed!
 for file in ./tests/*.sipa; do
     printf '\e[92mtest %q\e[39m\n' "$file"
     mapfile -d '' out < <(
-        "$bin" < "$file" || lec=$?
-        printf '%d\0' ${lec-0}
+        "$bin" < "$file"
+        printf '%d\0' $?
     )
     if [ "${out[-1]}" != 0 ]; then
         echo

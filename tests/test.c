@@ -1,4 +1,5 @@
 #include "../simple_array.h"
+#include <alloca.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,7 +41,7 @@ int main(int argc, char *argv[]) {
     size_t alloc_size;
 
     while ((alloc_size = simp_arr_parse(&meta)))
-        meta.last_alloc = (struct simp_arr*)malloc(alloc_size);
+        meta.last_alloc = (struct simp_arr*)alloca(alloc_size);
 
     if (simp_arr_fmt_result(&meta, eprint_handle)) {
         simp_arr_fmt_short(&meta.head, print_handle);
